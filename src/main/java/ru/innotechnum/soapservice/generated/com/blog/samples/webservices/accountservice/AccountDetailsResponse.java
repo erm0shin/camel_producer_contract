@@ -61,4 +61,10 @@ public class AccountDetailsResponse {
         this.accountDetails = value;
     }
 
+    @Override
+    public String toString() {
+        return "AccountDetailsResponse{" +
+                "accountDetails=" + accountDetails +
+                '}';
+    }
 }

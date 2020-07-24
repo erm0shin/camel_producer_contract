@@ -137,4 +137,13 @@ public class Account {
         this.accountStatus = value;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountNumber='" + accountNumber + '\'' +
+                ", accountName='" + accountName + '\'' +
+                ", accountBalance=" + accountBalance +
+                ", accountStatus=" + accountStatus +
+                '}';
+    }
 }
