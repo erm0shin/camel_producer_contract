@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RouteConfiguration extends RouteBuilder {
+
     @Override
     public void configure() {
         from("direct:start")
@@ -15,8 +16,9 @@ public class RouteConfiguration extends RouteBuilder {
                         "cxf://http://localhost:8080/soap-api/service/accounts"
                                 + "?serviceClass=ru.innotechnum.soapservice.generated.com.briansjavablog.accounts.Accounts"
                 )
-                .log("Response body is: ${body[0]}")
-                .to("mock:output");
+                .log("CXF body is: ${body[0]}")
+                .to("seda:end")
+        ;
     }
 
 }

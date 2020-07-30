@@ -1,0 +1,15 @@
+label: some_label
+input:
+  messageFrom: direct:start
+  messageBody:
+    class: ru.innotechnum.soapservice.generated.com.blog.samples.webservices.accountservice.AccountDetailsRequest
+    request:
+      accountNumber: '123'
+outputMessage:
+  sentTo: seda:end
+  body:
+    - accountDetails:
+        accountName: 'Joe Bloggs'
+        accountNumber: '12345'
+        accountStatus: 'ACTIVE'
+        accountBalance: 3400
